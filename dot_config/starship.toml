@@ -1,0 +1,51 @@
+format = "[~>](fg:green) $directory $git_commit"
+palette = "decay"
+
+[palettes.decay]
+blue = '#70a5eb'
+yellow = '#ecd3a0'
+red = '#dd6777'
+green = '#90ceaa'
+magenta = '#c296eb'
+
+[directory]
+format = "[$path](fg:green)"
+style = "fg:blue"
+truncation_length = 1
+truncation_symbol = ""
+
+[directory.substitutions]
+Documents = "󰈙"
+Downloads = " "
+Music = " "
+Pictures = " "
+
+[fill]
+style = "fg:overlay"
+symbol = " "
+
+[git_branch]
+format = "[$branch:](fg:red)"
+style = "fg:red"
+symbol = ""
+
+[git_commit]
+disabled = false
+only_detached = false
+format = "[git:\\(](fg:magenta)[$hash](fg:yellow)[\\)](fg:magenta) "
+style = "fg:yellow"
+commit_hash_length = 7
+
+[time]
+disabled = true
+format = "[](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)"
+style = "bg:overlay fg:rose"
+time_format = "%I:%M%P"
+use_12hr = true
+
+[username]
+disabled = true
+format = "[](fg:overlay)[ 󰧱 ]($style)[](fg:overlay)"
+show_always = true
+style_root = "bg:overlay fg:iris"
+style_user = "bg:overlay fg:iris"
