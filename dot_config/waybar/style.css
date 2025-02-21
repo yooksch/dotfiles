@@ -45,3 +45,16 @@ widget > * {
 #custom-playerctl {
  margin-left: 12px; 
 }
+
+#workspaces button {
+  margin: 0 6px;
+  color: #b6beca;
+  background-color: #202529;
+  border-radius: 5px;
+  padding: 0 4px;
+}
+
+#workspaces button.focused {
+  color: #181c1f;
+  background-color: #70a5eb;
+}

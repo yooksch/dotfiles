@@ -1,8 +1,8 @@
 {
   "modules-left": ["custom/cava", "custom/playerctl"],
-  "modules-center": ["clock"],
+  "modules-center": ["sway/workspaces", "custom/separator", "clock"],
   "modules-right": ["pulseaudio", "cpu", "memory", "network"],
-  "height": 40,
+  "height": 30,
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{:%B %d %Y | %H:%M}"
@@ -43,7 +43,7 @@
     "on-click": "pavucontrol"
   },
   "network": {
-    "format": "{bandwidthUpBytes}   {bandwidthDownBytes}  ",
+    "format": "{bandwidthDownBytes}   {bandwidthUpBytes}  ",
     "format-wifi": "Connected ",
     "format-disconnected": "Disconnected 󱛅", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰛳",
@@ -81,5 +81,8 @@
   	"on-scroll-up": "playerctl volume 0.05+",
   	"on-scroll-down": "playerctl volume 0.05-",
   	"smooth-scrolling-threshold": 1,
+  },
+  "custom/separator": {
+    "format": "  "
   }
 }
