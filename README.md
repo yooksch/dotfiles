@@ -13,3 +13,4 @@ Current dotfiles for my Arch + Sway setup
 - playerctl
 - waybar
 - qt6ct (for Qt theming)
+- starship
