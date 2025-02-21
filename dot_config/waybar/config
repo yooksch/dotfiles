@@ -1,10 +1,11 @@
 {
-  "modules-left": ["sway/workspaces", "sway/mode", "tray"],
-  "modules-center": ["sway/window"],
-  "modules-right": ["pulseaudio", "cpu", "memory", "clock"],
+  "modules-left": ["custom/cava", "custom/playerctl"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "cpu", "memory", "network"],
+  "height": 40,
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%b %d(%H:%M) 󰃰}"
+    "format": "{:%B %d %Y | %H:%M}"
   },
   "backlight": {
     "format": "{percent}% {icon}",
@@ -42,9 +43,8 @@
     "on-click": "pavucontrol"
   },
   "network": {
-    "format": "{ifname}",
+    "format": "{bandwidthUpBytes}   {bandwidthDownBytes}  ",
     "format-wifi": "Connected ",
-    "format-ethernet": "{ipaddr}/{cidr} 󰈀",
     "format-disconnected": "Disconnected 󱛅", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰛳",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
@@ -60,9 +60,26 @@
     "spacing": 8
   },
   "cpu": {
-    "format": "{usage}% CPU"
+    "format": "{usage}% "
   },
   "memory": {
-    "format": "{used}GB RAM"
+    "format": "{used}GB "
+  },
+  "custom/cava": {
+  	"exec": "$HOME/.config/waybar/scripts/cava.sh",
+  	"format": "{}"
+  },
+  "custom/playerctl": {
+  	"format": "<span>{}</span>",
+  	"return-type": "json",
+  	"max-length": 50,
+  	"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+  	"on-click-middle": "playerctl play-pause",
+  	"on-click": "playerctl previous",
+  	"on-click-right": "playerctl next",
+  	"scroll-step": 5.0,
+  	"on-scroll-up": "playerctl volume 0.05+",
+  	"on-scroll-down": "playerctl volume 0.05-",
+  	"smooth-scrolling-threshold": 1,
   }
 }
