@@ -22,7 +22,7 @@ set $menu rofi -show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/mau/.config/wallpapers/mountains.jpg fill
+output * bg $HOME/.config/wallpapers/foo.jpg fill
 #
 # Example configuration:
 #
@@ -66,8 +66,8 @@ input type:pointer {
     # Start your launcher
     bindsym $mod+r exec $menu
 
-    # OBS - Save replay buffer
-    bindsym $mod+s exec /home/mau/.local/bin/obs-cli -P 4444 replay save
+    # OBS - Save replay buffer (requires obs-cli from pipx)
+    bindsym $mod+s exec $HOME/.local/bin/obs-cli -P 4444 replay save
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

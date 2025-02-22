@@ -5,7 +5,7 @@
   "height": 30,
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%B %d %Y | %H:%M}"
+    "format": "{:%B %d %Y  %H:%M}"
   },
   "backlight": {
     "format": "{percent}% {icon}",
@@ -50,7 +50,8 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50
+    "max-length": 50,
+    "interval": 10
   },
   "sway/workspaces": {
     "disable-scroll": true
